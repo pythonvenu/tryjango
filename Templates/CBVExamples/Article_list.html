@@ -1,0 +1,7 @@
+{% extends 'base.html' %}
+{% block content %}
+<h1> Class Based List View</h1>
+{% for instance in object_list %}
+<p> {{ instance.id }} - <a href='{{ instance.get_absolute_reverse_url}}'>  {{ instance.title }} a> </p>
+{% endfor %}
+{% endblock %}

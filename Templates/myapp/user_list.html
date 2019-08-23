@@ -1,0 +1,16 @@
+
+<body class="container">
+<div class="row">
+    <div class="col">
+  <form method="GET">
+    {{ filter.form.as_p }}
+    <button type="submit">Search</button>
+  </form>
+  <ul>
+  {% for user in filter.qs %}
+    <li>{{ user.username }} - {{ user.get_full_name }}</li>
+  {% endfor %}
+  </ul>
+    </div>
+    </div>
+</body>

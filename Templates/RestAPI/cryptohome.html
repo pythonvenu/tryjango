@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Crypto News</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+</head>
+<body>
+
+<div class="container">
+    {% url 'Cryptoprice' %}
+    <a href="price/"> Click here for conversion rate </a>
+  <h1>Crypto Currency News</h1>
+  <div class="row" padding="0 15px 0 15px";>
+   {% for x in api.Data %}
+        <div class="card" style="width: 18rem;">
+            <img class="card-img-top" src="{{x.imageurl}}" alt="{{x.tag}}">
+            <div class="card-body">
+                <h4 class="card-title">{{x.title}}</h4>
+                <p class="card-text">{{x.body}}</p>
+                <a href="{{x.url}}" class="btn btn-primary">Go somewhere</a>
+            </div>
+            </div>
+        {% endfor %}
+  </div>
+</div>
+
+</body>
+</html>
